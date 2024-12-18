@@ -1,0 +1,145 @@
+:root {
+  --primary-color: #30c88b;
+  --text-color: #ddd;
+  --background-color: #000000;
+  --secondary-background-color: #333333;
+  --alert-color: orange;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background-color) url('../img/bg.jpg') no-repeat 0px 40px;
+  background-size: cover;
+  color: var(--text-color);
+  font: 16px/1.6 Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h2, nav ul li:hover, nav ul li.active {
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content {
+  opacity: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 60px);
+  width: 100%;
+  transition: opacity 0.4s ease-in;
+  padding: 0 20px;
+}
+
+.content li {
+  padding: 0 10px;
+  border-bottom: 1px #555;
+  background-color: var(--secondary-background-color);
+}
+
+.content.show {
+  opacity: 1;
+}
+
+.hide {
+  display: none;
+}
+
+nav {
+  background-color: var(--secondary-background-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+nav ul li {
+  color: var(--text-color);
+  cursor: pointer;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav ul li p {
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+.progress-bar {
+  background-color: var(--secondary-background-color);
+  border-radius: 12px;
+  height: 20px;
+  width: 300px;
+  padding: 3px;
+}
+
+.progress {
+  display: block;
+  background-color: var(--primary-color);
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.1s linear;
+}
+
+.alert {
+  text-align: center;
+  padding: 5px;
+  color: var(--alert-color);
+  border: var(--alert-color) 1px solid;
+}
+
+.form-control {
+  margin: 15px 0;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-control select, .form-control input {
+  width: 100%;
+  padding: 5px;
+}
+
+.btn, .btn:active {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  background-color: var(--secondary-background-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-background-color);
+}
+
+.btn:active, .btn:focus {
+  outline: none;
+}
